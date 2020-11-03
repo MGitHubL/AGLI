@@ -31,7 +31,7 @@ class AGLI:
         self.save_step = 10
         self.epochs = 10
         self.layer_num = 1
-        self.affect_threshold = 2
+        self.affect_threshold = 1
 
         self.data = AGLIDataSet(self.file_path, self.neg_size, self.hist_len, directed)
 
