@@ -20,7 +20,7 @@ ctypes.cdll.LoadLibrary('caffe2_nvrtc.dll')
 class AGLI:
     def __init__(self, directed=False):
         self.network = 'dblp'
-        self.file_path = '../data/%s.txt' % (self.network, self.network)
+        self.file_path = '../data/%s.txt' % (self.network)
         self.emb_path = '../emb/%s_agli_%d.emb'
 
         self.emb_size = 128
@@ -298,7 +298,7 @@ class AGLI:
                              + '\tonce_runtime: ' + str(once_end - once_start) + '\n')
             sys.stdout.flush()
 
-        self.save_node_embeddings(self.emb_path % (self.network, self.network, self.epochs))
+        self.save_node_embeddings(self.emb_path % (self.network, self.epochs))
 
     def save_node_embeddings(self, path):
         if torch.cuda.is_available():
